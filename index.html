@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahmoud Ashor Beshary | Junior Data Analyst & BI Specialist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: { bg: '#f8fafc', card: '#ffffff', dark: '#1e2029', muted: '#64748b', cyanAccent: '#0ea5e9', lightCyan: '#e0f2fe' }
+                    },
+                    fontFamily: { sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'] },
+                    boxShadow: { 'soft': '0 10px 30px -5px rgba(0, 0, 0, 0.04), 0 4px 12px -2px rgba(0, 0, 0, 0.025)', 'card': '0 4px 20px rgba(14, 165, 233, 0.08)', 'hover': '0 20px 40px -15px rgba(14, 165, 233, 0.15)' }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #f8fafc; color: #1e293b; font-family: 'Plus Jakarta Sans', sans-serif; }
+        .accent-gradient-text { background: linear-gradient(135deg, #0284c7 0%, #0ea5e9 50%, #38bdf8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .soft-card { background: #ffffff; border: 1px solid #e2e8f0; box-shadow: 0 10px 30px -5px rgba(0,0,0,0.03); border-radius: 1.25rem; }
+        .pill-tag { background: #f0f9ff; color: #0284c7; border: 1px solid #bae6fd; }
+        @keyframes pulse-slow {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.85; transform: scale(1.02); }
+        }
+        .animate-pulse-slow { animation: pulse-slow 3s infinite ease-in-out; }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col justify-between selection:bg-cyan-100 selection:text-cyan-700">
+
+    <!-- NAVBAR -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center space-x-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-600 to-sky-400 flex items-center justify-center font-bold text-white shadow-md shadow-cyan-200">MA</div>
+                <span class="font-bold text-lg tracking-tight text-slate-800">Mahmoud Ashor</span>
+            </a>
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-600">
+                <a href="#home" class="hover:text-cyan-600 transition-colors">Home</a>
+                <a href="#about" class="hover:text-cyan-600 transition-colors">About</a>
+                <a href="#toolkit" class="hover:text-cyan-600 transition-colors">Skills</a>
+                <a href="#projects" class="hover:text-cyan-600 transition-colors">Projects</a>
+                <a href="#experience" class="hover:text-cyan-600 transition-colors">Experience</a>
+                <a href="#education" class="hover:text-cyan-600 transition-colors">Education</a>
+                <a href="#contact" class="hover:text-cyan-600 transition-colors">Contact</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <a href="#contact" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold rounded-full pill-tag hover:bg-cyan-100 transition-all">
+                    <span class="w-2 h-2 rounded-full bg-cyan-500 animate-pulse"></span> Available for opportunities
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-24">
+
+        <!-- HERO SECTION -->
+        <section id="home" class="pt-6 pb-4 flex flex-col lg:flex-row items-center justify-between gap-12">
+            <div class="lg:w-6/12 space-y-6">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-50 border border-cyan-100 text-cyan-700 text-xs font-semibold">
+                    <span class="w-2 h-2 rounded-full bg-cyan-500 animate-pulse"></span> Junior Data Analyst
+                </div>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15] text-slate-900">
+                    Turning Data Into <br/><span class="accent-gradient-text">Actionable Insights</span>
+                </h1>
+                <p class="text-slate-600 text-base sm:text-lg leading-relaxed max-w-xl font-normal">
+                    A chemist by background with a deep passion for Data Analytics. I combine my scientific roots and analytical rigor with a solid technical foundation in SQL, Power BI (Power Query/DAX), Advanced Excel, and Python to transform raw operational datasets into clear insights and dynamic dashboards.
+                </p>
+                <div class="flex flex-wrap items-center gap-4 pt-2">
+                    <a href="#projects" class="px-6 py-3.5 rounded-2xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm transition-all shadow-md">Explore Projects</a>
+                    <a href="Mahmoud Ashor.pdf" target="_blank" class="px-6 py-3.5 rounded-2xl bg-cyan-50 hover:bg-cyan-100 text-cyan-700 font-semibold text-sm transition-all flex items-center gap-2 border border-cyan-200">
+                        <i class="fa-solid fa-file-pdf text-xs"></i> View CV
+                    </a>
+                </div>
+            </div>
+
+            <!-- الكارت المتحرك والكرييتف بدرجات السماوي -->
+            <div class="lg:w-6/12 w-full">
+                <div class="soft-card p-6 sm:p-8 space-y-6 bg-gradient-to-br from-white via-sky-50/30 to-cyan-50/50 border border-cyan-100 shadow-card relative animate-pulse-slow">
+                    <div class="flex items-center justify-between border-b border-cyan-100/60 pb-4">
+                        <div>
+                            <div class="flex items-center gap-2">
+                                <span class="w-2.5 h-2.5 rounded-full bg-cyan-500 animate-ping"></span>
+                                <h3 class="font-bold text-slate-800 text-base">Live Analytics Engine</h3>
+                            </div>
+                            <p class="text-xs text-sky-600/80 font-medium">Real-time KPI & Pipeline Processing</p>
+                        </div>
+                        <div class="flex space-x-1.5">
+                            <span class="w-3 h-3 rounded-full bg-sky-200 inline-block"></span>
+                            <span class="w-3 h-3 rounded-full bg-cyan-300 inline-block"></span>
+                            <span class="w-3 h-3 rounded-full bg-cyan-500 inline-block"></span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="p-4 rounded-2xl bg-white/80 border border-cyan-100 shadow-sm hover:border-cyan-300 transition-all group">
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="text-xs text-slate-500 font-medium">Model Accuracy</span>
+                                <i class="fa-solid fa-chart-line text-cyan-500 text-xs"></i>
+                            </div>
+                            <div class="text-2xl font-extrabold text-slate-900 group-hover:text-cyan-600 transition-colors">98.4%</div>
+                            <div class="w-full bg-slate-100 h-1.5 rounded-full mt-2 overflow-hidden">
+                                <div class="bg-gradient-to-r from-sky-400 to-cyan-500 h-full rounded-full" style="width: 98.4%"></div>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-white/80 border border-cyan-100 shadow-sm hover:border-cyan-300 transition-all group">
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="text-xs text-slate-500 font-medium">Processed Rows</span>
+                                <i class="fa-solid fa-database text-sky-500 text-xs"></i>
+                            </div>
+                            <div class="text-2xl font-extrabold text-slate-900 group-hover:text-sky-600 transition-colors">50K+</div>
+                            <div class="w-full bg-slate-100 h-1.5 rounded-full mt-2 overflow-hidden">
+                                <div class="bg-gradient-to-r from-cyan-400 to-sky-500 h-full rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="p-3.5 rounded-xl bg-cyan-900 text-cyan-50 flex items-center justify-between text-xs shadow-inner">
+                        <div class="flex items-center gap-2">
+                            <i class="fa-solid fa-terminal text-cyan-400"></i>
+                            <span class="font-mono">SQL & Power BI Dashboard Status:</span>
+                        </div>
+                        <span class="px-2 py-0.5 rounded bg-cyan-700/80 text-cyan-200 font-bold uppercase tracking-wider text-[10px] animate-pulse">Active Sync</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT ME SECTION -->
+        <section id="about" class="space-y-8">
+            <div class="text-center max-w-2xl mx-auto space-y-2">
+                <h2 class="text-3xl font-extrabold text-slate-900">About Me</h2>
+            </div>
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-5/12 w-full flex justify-center">
+                    <div class="relative max-w-md w-full">
+                        <div class="soft-card p-3 rounded-3xl bg-gradient-to-tr from-sky-100 to-cyan-50 overflow-hidden shadow-xl border border-cyan-100">
+                            <img src="images/Profile Picture.jpeg" alt="Mahmoud Ashor Beshary" class="rounded-2xl object-cover w-full h-96 shadow-sm" onerror="this.src='https://placehold.co/600x600/e0f2fe/0ea5e9?text=Mahmoud+Ashor'"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-7/12 space-y-6">
+                    <p class="text-slate-600 leading-relaxed text-base font-normal">
+                        I am <strong>Mahmoud Ashor Beshary</strong>, a Bachelor’s graduate in Chemistry & Zoology from South Valley University (Very Good with Honours - 81.7%). Beyond my academic background, my true passion lies in <strong>Data Analytics</strong>. Building upon my professional experience as an In-Process Control (IPC) Specialist at top pharmaceutical companies like CIRA Pharma and UNI Pharma, I combine a rigorous, quality-first analytical mindset with strong technical proficiencies in SQL, Power BI, Advanced Excel, and Python to turn complex operational datasets into clear, impactful, and data-driven decisions.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TECHNICAL TOOLKIT -->
+        <section id="toolkit" class="space-y-8">
+            <div class="text-center max-w-2xl mx-auto space-y-2">
+                <h2 class="text-3xl font-extrabold text-slate-900">Technical Toolkit</h2>
+            </div>
+            <div class="soft-card p-6 sm:p-10 bg-white">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                    <div class="p-3 bg-cyan-50/50 border border-cyan-100 rounded-xl font-bold text-cyan-900 text-xs">Power BI & DAX</div>
+                    <div class="p-3 bg-cyan-50/50 border border-cyan-100 rounded-xl font-bold text-cyan-900 text-xs">SQL Server (T-SQL)</div>
+                    <div class="p-3 bg-cyan-50/50 border border-cyan-100 rounded-xl font-bold text-cyan-900 text-xs">Advanced Excel & Power Query</div>
+                    <div class="p-3 bg-cyan-50/50 border border-cyan-100 rounded-xl font-bold text-cyan-900 text-xs">Python (Jupyter)</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURED PROJECTS -->
+        <section id="projects" class="space-y-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+                <div>
+                    <h2 class="text-3xl font-extrabold text-slate-900">Featured Projects</h2>
+                    <p class="text-slate-500 text-sm mt-1">A selection of dashboards, data models, and SQL analyses I've built.</p>
+                </div>
+
+                <div class="flex flex-wrap gap-2 text-xs font-semibold" id="filter-buttons">
+                    <button onclick="filterProjects('all')" class="project-filter-btn active px-4 py-2 rounded-xl bg-slate-900 text-white transition-all">All</button>
+                    <button onclick="filterProjects('Power BI')" class="project-filter-btn px-4 py-2 rounded-xl bg-white border border-slate-200 hover:bg-slate-50 text-slate-600 transition-all">Power BI</button>
+                    <button onclick="filterProjects('SQL')" class="project-filter-btn px-4 py-2 rounded-xl bg-white border border-slate-200 hover:bg-slate-50 text-slate-600 transition-all">SQL Server</button>
+                    <button onclick="filterProjects('Excel')" class="project-filter-btn px-4 py-2 rounded-xl bg-white border border-slate-200 hover:bg-slate-50 text-slate-600 transition-all">Excel</button>
+                </div>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="projects-grid">
+
+                <!-- Project 1: Walmart -->
+                <div class="project-card soft-card overflow-hidden flex flex-col justify-between bg-white hover:shadow-hover transition-all cursor-pointer" onclick="openModal('project1')" data-tech="Power BI DAX">
+                    <div>
+                        <div class="h-60 bg-slate-900 overflow-hidden relative border-b border-slate-100 flex items-center justify-center">
+                            <img src="images/Screenshot For Walmart Dashboard.png" alt="Walmart Sales Dashboard" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" onerror="this.src='https://placehold.co/800x450/1e293b/0ea5e9?text=Walmart+Sales+Dashboard'">
+                            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-cyan-950/80 text-cyan-200 backdrop-blur-md">POWER BI & DAX</span>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <span class="px-3 py-1 rounded-full text-[10px] font-semibold bg-cyan-50 text-cyan-700">Power BI</span>
+                            <h3 class="font-bold text-xl text-slate-900">Walmart Sales Analysis (2010–2012)</h3>
+                            <p class="text-xs text-slate-500 leading-relaxed">Comprehensive retail analytics tracking multi-year sales performance ($6.74bn), holiday impacts, store-level trends, and macroeconomic correlations.</p>
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span class="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600 text-[11px] font-medium">Power BI</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600 text-[11px] font-medium">Power Query</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600 text-[11px] font-medium">DAX</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <div class="w-full py-3 rounded-xl bg-slate-50 hover:bg-cyan-50 text-slate-700 hover:text-cyan-700 text-xs font-semibold border border-slate-200 transition-colors flex items-center justify-center gap-2">
+                            <span>Inspect Case Study</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Apex Supermarket -->
+                <div class="project-card soft-card overflow-hidden flex flex-col justify-between bg-white hover:shadow-hover transition-all cursor-pointer" onclick="openModal('project2')" data-tech="Power BI Excel">
+                    <div>
+                        <div class="h-60 bg-slate-900 overflow-hidden relative border-b border-slate-100 flex items-center justify-center">
+                            <img src="images/Screenshot For Apex Supermarket Dashboard.png" alt="Apex Supermarket Dashboard" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" onerror="this.src='https://placehold.co/800x450/1e293b/0ea5e9?text=Apex+Supermarket+Dashboard'">
+                            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-cyan-950/80 text-cyan-200 backdrop-blur-md">POWER BI & RETAIL</span>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <span class="px-3 py-1 rounded-full text-[10px] font-semibold bg-cyan-50 text-cyan-700">Power BI</span>
+                            <h3 class="font-bold text-xl text-slate-900">Apex Supermarket Project (Q1)</h3>
+                            <p class="text-xs text-slate-500 leading-relaxed">Interactive Power BI dashboard analyzing Q1 performance ($322.91K Revenue), COGS, gross margins, and sales representative contributions.</p>
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span class="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600 text-[11px] font-medium">Power BI</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600 text-[11px] font-medium">DAX</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600 text-[11px] font-medium">Financials</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <div class="w-full py-3 rounded-xl bg-slate-50 hover:bg-cyan-50 text-slate-700 hover:text-cyan-700 text-xs font-semibold border border-slate-200 transition-colors flex items-center justify-center gap-2">
+                            <span>Inspect Case Study</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Smartphones Market -->
+                <div class="project-card soft-card overflow-hidden flex flex-col justify-between bg-white hover:shadow-hover transition-all cursor-pointer" onclick="openModal('project3')" data-tech="SQL Excel">
+                    <div>
+                        <div class="h-60 bg-slate-900 overflow-hidden relative border-b border-slate-100 flex items-center justify-center">
+                            <img src="images/Screenshot For First Dashboard.png" alt="Smartphones Market Dashboard" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" onerror="this.src='https://placehold.co/800x450/1e293b/0ea5e9?text=Smartphones+Market+Analysis'">
+                            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-cyan-950/80 text-cyan-200 backdrop-blur-md">SQL SERVER & EXCEL</span>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <span class="px-3 py-1 rounded-full text-[10px] font-semibold bg-cyan-50 text-cyan-700">SQL Server</span>
+                            <h3 class="font-bold text-xl text-slate-900">Smartphones Market Analysis (2023)</h3>
+                            <p class="text-xs text-slate-500 leading-relaxed">Market analytics examining global smartphone trends across 938 models, pricing distributions, 5G penetration, and hardware specs.</p>
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span class="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600 text-[11px] font-medium">SQL Server</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600 text-[11px] font-medium">Excel</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600 text-[11px] font-medium">EDA</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <div class="w-full py-3 rounded-xl bg-slate-50 hover:bg-cyan-50 text-slate-700 hover:text-cyan-700 text-xs font-semibold border border-slate-200 transition-colors flex items-center justify-center gap-2">
+                            <span>Inspect Case Study</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: Pizza Sales Store -->
+                <div class="project-card soft-card overflow-hidden flex flex-col justify-between bg-white hover:shadow-hover transition-all cursor-pointer" onclick="openModal('project4')" data-tech="SQL Power BI">
+                    <div>
+                        <div class="h-60 bg-slate-900 overflow-hidden relative border-b border-slate-100 flex items-center justify-center">
+                            <img src="images/Screenshot For Pizza_sales Dashboard.png" alt="Pizza Sales Dashboard" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" onerror="this.src='https://placehold.co/800x450/1e293b/0ea5e9?text=Pizza+Sales+Store+Analysis'">
+                            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-cyan-950/80 text-cyan-200 backdrop-blur-md">T-SQL & POWER BI</span>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <span class="px-3 py-1 rounded-full text-[10px] font-semibold bg-cyan-50 text-cyan-700">Power BI & SQL</span>
+                            <h3 class="font-bold text-xl text-slate-900">Pizza Sales Store Analysis (2015)</h3>
+                            <p class="text-xs text-slate-500 leading-relaxed">End-to-end operational analytics evaluating 49,574 pizza sales transactions ($817,860 Revenue) to isolate peak hours, daily demand, and best/worst sellers.</p>
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span class="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600 text-[11px] font-medium">T-SQL</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600 text-[11px] font-medium">Power BI</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600 text-[11px] font-medium">KPIs</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <div class="w-full py-3 rounded-xl bg-slate-50 hover:bg-cyan-50 text-slate-700 hover:text-cyan-700 text-xs font-semibold border border-slate-200 transition-colors flex items-center justify-center gap-2">
+                            <span>Inspect Case Study</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- EXPERIENCE SECTION -->
+        <section id="experience" class="space-y-6">
+            <div class="text-center max-w-2xl mx-auto space-y-2">
+                <h2 class="text-3xl font-extrabold text-slate-900">Work Experience</h2>
+            </div>
+            <div class="max-w-3xl mx-auto space-y-4">
+                <div class="soft-card p-6 bg-white flex justify-between items-center">
+                    <div>
+                        <h3 class="font-bold text-slate-800">In-Process Control (IPC) Specialist</h3>
+                        <p class="text-xs text-cyan-600 font-semibold">CIRA PHARMA Company</p>
+                    </div>
+                    <span class="text-xs text-slate-400 font-bold">Jan 2025 – Present</span>
+                </div>
+                <div class="soft-card p-6 bg-white flex justify-between items-center">
+                    <div>
+                        <h3 class="font-bold text-slate-800">In-Process Control (IPC) Specialist</h3>
+                        <p class="text-xs text-cyan-600 font-semibold">UNI PHARMA Company</p>
+                    </div>
+                    <span class="text-xs text-slate-400 font-bold">Jul 2024 – Dec 2024</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDUCATION & TRAINING SECTION -->
+        <section id="education" class="space-y-10">
+            <div class="text-center max-w-2xl mx-auto space-y-2">
+                <h2 class="text-3xl font-extrabold text-slate-900">Education & Training</h2>
+                <p class="text-slate-500 text-sm">Academic background and professional certifications.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                
+                <!-- Academic Degree Column -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-2 text-cyan-700 font-bold text-sm tracking-wide uppercase">
+                        <i class="fa-solid fa-graduation-cap text-base"></i> Academic Degree
+                    </div>
+                    <div class="soft-card p-6 bg-white relative overflow-hidden border-l-4 border-l-cyan-500 space-y-3">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="font-bold text-slate-900 text-base">Bachelor’s Degree in Chemistry & Zoology</h3>
+                                <p class="text-xs text-cyan-700 font-semibold mt-1">Faculty of Science, South Valley University</p>
+                            </div>
+                            <span class="text-xs font-bold text-slate-400 bg-slate-100 px-2.5 py-1 rounded-full">June 2022</span>
+                        </div>
+                        <p class="text-xs text-slate-600 font-medium">Grade: <span class="text-slate-900 font-bold">Very Good with Honours (81.7%)</span></p>
+                        <div class="pt-2 border-t border-slate-100 text-xs text-slate-500 italic">
+                            Graduation Project: Acid chloride reactions preparation — <span class="font-bold text-slate-700">Grade: Excellent</span> (Covered synthesis, physical & chemical properties, reactions, and industrial uses).
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Professional Development / Bootcamps & Certifications Column -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-2 text-cyan-700 font-bold text-sm tracking-wide uppercase">
+                        <i class="fa-solid fa-certificate text-base"></i> Bootcamps & Certifications
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <!-- Item 1 -->
+                        <div class="soft-card p-5 bg-white flex justify-between items-center hover:border-cyan-200 transition-all">
+                            <div>
+                                <h3 class="font-bold text-slate-900 text-sm">Data Analyst Bootcamp</h3>
+                                <p class="text-xs text-slate-500 mt-0.5">Alex The Analyst (SQL, Excel, Power BI, Tableau & Python)</p>
+                            </div>
+                            <span class="text-[11px] font-semibold text-cyan-700 bg-cyan-50 px-3 py-1 rounded-full border border-cyan-100 shrink-0">Completed</span>
+                        </div>
+
+                        <!-- Item 2 -->
+                        <div class="soft-card p-5 bg-white flex justify-between items-center hover:border-cyan-200 transition-all">
+                            <div>
+                                <h3 class="font-bold text-slate-900 text-sm">Google Data Analytics Certificate</h3>
+                                <p class="text-xs text-slate-500 mt-0.5">Foundations: Data, Data, Everywhere</p>
+                            </div>
+                            <span class="text-[11px] font-semibold text-cyan-700 bg-cyan-50 px-3 py-1 rounded-full border border-cyan-100 shrink-0">Certified</span>
+                        </div>
+
+                        <!-- Item 3 -->
+                        <div class="soft-card p-5 bg-white flex justify-between items-center hover:border-cyan-200 transition-all">
+                            <div>
+                                <h3 class="font-bold text-slate-900 text-sm">Google Data Analytics Certificate</h3>
+                                <p class="text-xs text-slate-500 mt-0.5">Ask Questions to Make Data-Driven Decisions</p>
+                            </div>
+                            <span class="text-[11px] font-semibold text-cyan-700 bg-cyan-50 px-3 py-1 rounded-full border border-cyan-100 shrink-0">Certified</span>
+                        </div>
+
+                        <!-- Item 4 -->
+                        <div class="soft-card p-5 bg-white flex justify-between items-center hover:border-cyan-200 transition-all">
+                            <div>
+                                <h3 class="font-bold text-slate-900 text-sm">Google Data Analytics Certificate</h3>
+                                <p class="text-xs text-slate-500 mt-0.5">Prepare Data for Exploration</p>
+                            </div>
+                            <span class="text-[11px] font-semibold text-cyan-700 bg-cyan-50 px-3 py-1 rounded-full border border-cyan-100 shrink-0">Certified</span>
+                        </div>
+
+                        <!-- Item 5 -->
+                        <div class="soft-card p-5 bg-white flex justify-between items-center hover:border-cyan-200 transition-all">
+                            <div>
+                                <h3 class="font-bold text-slate-900 text-sm">AI Fundamentals & Advanced Computer Skills</h3>
+                                <p class="text-xs text-slate-500 mt-0.5">Certified Professional Training</p>
+                            </div>
+                            <span class="text-[11px] font-semibold text-cyan-700 bg-cyan-50 px-3 py-1 rounded-full border border-cyan-100 shrink-0">Certified</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION (محدث بحيث يفتح الإيميل تلقائياً عند الضغط من غير ظهور النص العشوائي للإيميل) -->
+        <section id="contact" class="space-y-6">
+            <div class="soft-card p-10 bg-gradient-to-tr from-cyan-50/50 via-white to-sky-50/40 text-center space-y-4 border border-cyan-100">
+                <h2 class="text-3xl font-extrabold text-slate-900">Let's Work Together</h2>
+                <p class="text-slate-600 text-sm">Open to Junior Data Analyst roles and Business Intelligence opportunities.</p>
+                <div class="flex flex-wrap justify-center items-center gap-6 text-xl pt-2">
+                    <!-- GitHub Link -->
+                    <a href="https://github.com/Mahmoud-Ashor" target="_blank" class="flex items-center gap-2 text-slate-700 hover:text-cyan-600 transition-colors font-semibold text-sm px-4 py-2.5 rounded-xl bg-white border border-slate-200 shadow-sm">
+                        <i class="fa-brands fa-github text-lg text-slate-900"></i> GitHub Profile
+                    </a>
+                    <!-- Email Direct Mailto Link (من غير ظهور الإيميل نصاً) -->
+                    <a href="mailto:Mahmoudashor1000@gmail.com" class="flex items-center gap-2 text-slate-700 hover:text-cyan-600 transition-colors font-semibold text-sm px-4 py-2.5 rounded-xl bg-white border border-slate-200 shadow-sm">
+                        <i class="fa-regular fa-envelope text-lg text-cyan-600"></i> Send Email
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-slate-200 py-6 bg-white text-center text-xs text-slate-500">
+        © 2026 Mahmoud Ashor Beshary. All rights reserved.
+    </footer>
+
+    <!-- INTERACTIVE CASE STUDY MODAL WITH MULTI-IMAGE GALLERY -->
+    <div id="projectModal" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="soft-card bg-white max-w-4xl w-full p-6 sm:p-8 space-y-6 relative overflow-y-auto max-h-[95vh]">
+            <button onclick="closeModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-700 text-xl"><i class="fa-solid fa-xmark"></i></button>
+            
+            <div class="space-y-2">
+                <span id="modal-tag" class="px-2.5 py-1 rounded-md text-[10px] font-bold tracking-wider uppercase pill-tag">Project Case Study</span>
+                <h3 id="modal-title" class="text-2xl font-extrabold text-slate-900"></h3>
+            </div>
+
+            <div class="space-y-4 text-xs text-slate-600">
+                <div>
+                    <h4 class="text-xs uppercase font-bold text-slate-400 tracking-wider mb-1">Business Objective & Overview</h4>
+                    <p id="modal-objective" class="text-slate-600 leading-relaxed text-sm"></p>
+                </div>
+
+                <div>
+                    <h4 class="text-xs uppercase font-bold text-slate-400 tracking-wider mb-1">Technologies Used</h4>
+                    <div id="modal-stack" class="flex flex-wrap gap-2 pt-1"></div>
+                </div>
+
+                <!-- Interactive Screenshot Gallery Viewer with Next/Prev Buttons -->
+                <div>
+                    <div class="flex items-center justify-between mb-2">
+                        <h4 class="text-xs uppercase font-bold text-slate-400 tracking-wider">Project Screenshots Gallery</h4>
+                        <span id="gallery-counter" class="text-xs font-semibold text-cyan-600">Image 1 of 2</span>
+                    </div>
+                    <div class="relative bg-slate-900 rounded-2xl overflow-hidden shadow-lg border border-slate-200 h-72 sm:h-96 flex items-center justify-center">
+                        <img id="modal-img" src="" alt="Dashboard Preview" class="w-full h-full object-contain bg-slate-950 transition-all duration-300">
+                        
+                        <!-- Prev / Next Navigation Buttons -->
+                        <button onclick="prevImage()" class="absolute left-3 w-10 h-10 rounded-full bg-white/80 hover:bg-white text-slate-800 flex items-center justify-center shadow-md transition-all">
+                            <i class="fa-solid fa-chevron-left text-xs"></i>
+                        </button>
+                        <button onclick="nextImage()" class="absolute right-3 w-10 h-10 rounded-full bg-white/80 hover:bg-white text-slate-800 flex items-center justify-center shadow-md transition-all">
+                            <i class="fa-solid fa-chevron-right text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-xs uppercase font-bold text-slate-400 tracking-wider mb-1">Key Deliverables & Insights</h4>
+                    <ul id="modal-bullets" class="list-disc list-inside space-y-1.5 text-slate-600 text-sm"></ul>
+                </div>
+            </div>
+
+            <div class="pt-4 border-t border-slate-100 flex justify-end">
+                <button onclick="closeModal()" class="px-5 py-2.5 bg-slate-900 hover:bg-slate-800 text-white rounded-xl text-xs font-semibold">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script>
+        const modalData = {
+            project1: {
+                tag: 'POWER BI & DAX',
+                title: 'Walmart Sales Analysis (2010–2012)',
+                objective: 'Comprehensive retail analytics dashboard tracking Walmart multi-year sales performance ($6.74bn), holiday vs workday impact, store-level trends, and macroeconomic correlations.',
+                stack: ['Power BI', 'Power Query', 'DAX', 'Data Modeling'],
+                images: [
+                    'images/Screenshot For Walmart Dashboard.png',
+                    'images/Screenshot For Key Insights After Analysis.png'
+                ],
+                bullets: [
+                    'Engineered Power BI dashboards tracking sales trends across 45 stores during holiday ($505.30M) and workday ($6.23bn) periods.',
+                    'Constructed dynamic DAX measures comparing yearly performance (2011 peak at $2.45bn vs 2010 at $2.29bn).',
+                    'Analyzed external factors showing positive correlation with temperature and fuel prices.'
+                ]
+            },
+            project2: {
+                tag: 'POWER BI & RETAIL',
+                title: 'Apex Supermarket Project (Q1)',
+                objective: 'Interactive Power BI dashboard analyzing Q1 performance ($322.91K Revenue), COGS, gross margins, and sales representative contributions for Apex Retail Group.',
+                stack: ['Power BI', 'DAX', 'Power Query', 'Financial Analysis'],
+                images: [
+                    'images/Screenshot For Apex Supermarket Dashboard.png',
+                    'images/Screenshot For Key Insights For Apex Market.png'
+                ],
+                bullets: [
+                    'Analyzed first-quarter financial metrics ($322.91K Total Revenue vs $307.53K COGS, generating $15.38K Gross Income).',
+                    'Isolated sales performance per rep (Samy leading with ~$128K, Sally & Ahmed at ~$93K each).',
+                    'Constructed executive dashboard views tracking product line contributions and gross margin distributions.'
+                ]
+            },
+            project3: {
+                tag: 'SQL SERVER & EXCEL',
+                title: 'Smartphones Market Analysis (2023)',
+                objective: 'Market analytics dashboard examining global smartphone trends across 938 models, pricing distributions, 5G penetration, and hardware specs using SQL Server and Excel.',
+                stack: ['SQL Server (T-SQL)', 'Advanced Excel', 'Data Cleansing'],
+                images: [
+                    'images/Screenshot For First Dashboard.png',
+                    'images/Screenshot For Second Dashboard.png'
+                ],
+                bullets: [
+                    'Built T-SQL queries analyzing 938 smartphone models across 23 global brands ($380.31 overall average price).',
+                    'Applied Excel formulas to strip brand volume bias and measure 5G market penetration (56.50% share).',
+                    'Summarized key hardware specs across battery capacity, RAM distributions, and refresh rates.'
+                ]
+            },
+            project4: {
+                tag: 'T-SQL & POWER BI',
+                title: 'Pizza Sales Store Analysis (2015)',
+                objective: 'End-to-end operational analytics evaluating 49,574 pizza sales transactions ($817,860 Revenue) to isolate peak hours, daily demand, and best/worst sellers.',
+                stack: ['T-SQL', 'SQL Server', 'Power BI', 'DAX', 'Excel'],
+                images: [
+                    'images/Screenshot For Pizza_sales Dashboard.png',
+                    'images/Screenshot For Pizza_sales Dashboard 2.png'
+                ],
+                bullets: [
+                    'Ran T-SQL KPI scripts calculating Total Revenue ($817,860), Total Orders (21,350), and Pizzas Sold (49,574).',
+                    'Built an interactive multi-page Power BI dashboard identifying peak ordering days (Friday & Saturday evenings) and months (May & July).',
+                    'Identified Classic Category and Large Size as top revenue and volume generators.'
+                ]
+            }
+        };
+
+        let currentProjectImages = [];
+        let currentImageIndex = 0;
+
+        function openModal(id) {
+            const data = modalData[id];
+            if (!data) return;
+
+            document.getElementById('modal-tag').innerText = data.tag;
+            document.getElementById('modal-title').innerText = data.title;
+            document.getElementById('modal-objective').innerText = data.objective;
+
+            currentProjectImages = data.images;
+            currentImageIndex = 0;
+            updateGalleryImage();
+
+            const stackBox = document.getElementById('modal-stack');
+            stackBox.innerHTML = '';
+            data.stack.forEach(t => {
+                const s = document.createElement('span');
+                s.className = 'px-2.5 py-1 rounded-md bg-cyan-50 text-cyan-800 text-[11px] font-semibold border border-cyan-100';
+                s.innerText = t;
+                stackBox.appendChild(s);
+            });
+
+            const bulletBox = document.getElementById('modal-bullets');
+            bulletBox.innerHTML = '';
+            data.bullets.forEach(b => {
+                const li = document.createElement('li');
+                li.innerText = b;
+                bulletBox.appendChild(li);
+            });
+
+            document.getElementById('projectModal').classList.remove('hidden');
+        }
+
+        function updateGalleryImage() {
+            if (currentProjectImages.length > 0) {
+                document.getElementById('modal-img').src = currentProjectImages[currentImageIndex];
+                document.getElementById('gallery-counter').innerText = `Image ${currentImageIndex + 1} of ${currentProjectImages.length}`;
+            }
+        }
+
+        function nextImage() {
+            if (currentProjectImages.length > 0) {
+                currentImageIndex = (currentImageIndex + 1) % currentProjectImages.length;
+                updateGalleryImage();
+            }
+        }
+
+        function prevImage() {
+            if (currentProjectImages.length > 0) {
+                currentImageIndex = (currentImageIndex - 1 + currentProjectImages.length) % currentProjectImages.length;
+                updateGalleryImage();
+            }
+        }
+
+        function closeModal() {
+            document.getElementById('projectModal').classList.add('hidden');
+        }
+
+        function filterProjects(cat) {
+            const buttons = document.querySelectorAll('.project-filter-btn');
+            buttons.forEach(b => {
+                b.classList.remove('bg-slate-900', 'text-white');
+                b.classList.add('bg-white', 'text-slate-600');
+            });
+
+            event.target.classList.remove('bg-white', 'text-slate-600');
+            event.target.classList.add('bg-slate-900', 'text-white');
+
+            const cards = document.querySelectorAll('.project-card');
+            cards.forEach(c => {
+                const tech = c.getAttribute('data-tech');
+                if (cat === 'all' || tech.includes(cat)) {
+                    c.style.display = 'flex';
+                } else {
+                    c.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
