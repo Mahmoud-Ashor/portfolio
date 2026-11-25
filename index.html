@@ -7,42 +7,97 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: {
-                        brand: { bg: '#f8fafc', card: '#ffffff', dark: '#1e2029', muted: '#64748b', cyanAccent: '#0ea5e9', lightCyan: '#e0f2fe' }
-                    },
                     fontFamily: { sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'] },
-                    boxShadow: { 'soft': '0 10px 30px -5px rgba(0, 0, 0, 0.04), 0 4px 12px -2px rgba(0, 0, 0, 0.025)', 'card': '0 4px 20px rgba(14, 165, 233, 0.08)', 'hover': '0 20px 40px -15px rgba(14, 165, 233, 0.15)' }
                 }
             }
         }
     </script>
     <style>
-        body { background-color: #f8fafc; color: #1e293b; font-family: 'Plus Jakarta Sans', sans-serif; }
-        .accent-gradient-text { background: linear-gradient(135deg, #0284c7 0%, #0ea5e9 50%, #38bdf8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .soft-card { background: #ffffff; border: 1px solid #e2e8f0; box-shadow: 0 10px 30px -5px rgba(0,0,0,0.03); border-radius: 1.25rem; }
-        .pill-tag { background: #f0f9ff; color: #0284c7; border: 1px solid #bae6fd; }
-        @keyframes pulse-slow {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.85; transform: scale(1.02); }
+        /* خلفية ملونة وحيوية تبرز التأثير الزجاجي الفائق */
+        body { 
+            background: linear-gradient(135deg, #bae6fd 0%, #e0f2fe 35%, #f0fdf4 70%, #f8fafc 100%);
+            background-attachment: fixed;
+            color: #0f172a; 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
         }
-        .animate-pulse-slow { animation: pulse-slow 3s infinite ease-in-out; }
+        
+        /* تأثير الزجاج الفائق الشفافية والنعومة (Ultra Glassmorphism) */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.28);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.05), inset 0 1px 2px rgba(255, 255, 255, 0.8);
+            border-radius: 1.75rem;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.22);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.03), inset 0 1px 1px rgba(255, 255, 255, 0.6);
+            border-radius: 1.5rem;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.4);
+            border-color: rgba(14, 165, 233, 0.5);
+            box-shadow: 0 30px 60px rgba(14, 165, 233, 0.12), inset 0 1px 2px rgba(255, 255, 255, 0.9);
+            transform: translateY(-5px);
+        }
+
+        .accent-gradient-text { 
+            background: linear-gradient(135deg, #0369a1 0%, #0ea5e9 50%, #38bdf8 100%); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+        }
+
+        .pill-tag { 
+            background: rgba(224, 242, 254, 0.4); 
+            backdrop-filter: blur(12px);
+            color: #0369a1; 
+            border: 1px solid rgba(186, 230, 253, 0.7); 
+        }
+
+        /* تأثير الإضاءة والتوهج القوي للنقاط (Neon Glow & Pulse) */
+        @keyframes glowing-dot {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(14, 165, 233, 0.8), 0 0 10px rgba(14, 165, 233, 0.6);
+            }
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 10px rgba(14, 165, 233, 0), 0 0 20px rgba(14, 165, 233, 0.9);
+            }
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(14, 165, 233, 0), 0 0 10px rgba(14, 165, 233, 0.6);
+            }
+        }
+
+        .neon-glow-dot {
+            background-color: #0ea5e9;
+            box-shadow: 0 0 15px #0ea5e9, 0 0 25px #38bdf8;
+            animation: glowing-dot 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+        }
     </style>
 </head>
-<body class="antialiased min-h-screen flex flex-col justify-between selection:bg-cyan-100 selection:text-cyan-700">
+<body class="antialiased min-h-screen flex flex-col justify-between selection:bg-cyan-200 selection:text-cyan-900">
 
     <!-- NAVBAR -->
-    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
+    <header class="sticky top-0 z-50 bg-white/20 backdrop-blur-2xl border-b border-white/40 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <a href="#" class="flex items-center space-x-3 group">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-600 to-sky-400 flex items-center justify-center font-bold text-white shadow-md shadow-cyan-200">MA</div>
+                <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-cyan-600 to-sky-400 flex items-center justify-center font-bold text-white shadow-md shadow-cyan-200">MA</div>
                 <span class="font-bold text-lg tracking-tight text-slate-800">Mahmoud Ashor</span>
             </a>
-            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-600">
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-700">
                 <a href="#home" class="hover:text-cyan-600 transition-colors">Home</a>
                 <a href="#about" class="hover:text-cyan-600 transition-colors">About</a>
                 <a href="#toolkit" class="hover:text-cyan-600 transition-colors">Skills</a>
@@ -52,8 +107,9 @@
                 <a href="#contact" class="hover:text-cyan-600 transition-colors">Contact</a>
             </nav>
             <div class="flex items-center space-x-4">
-                <a href="#contact" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold rounded-full pill-tag hover:bg-cyan-100 transition-all">
-                    <span class="w-2 h-2 rounded-full bg-cyan-500 animate-pulse"></span> Available for opportunities
+                <a href="#contact" class="hidden sm:inline-flex items-center gap-2.5 px-4 py-2 text-xs font-semibold rounded-full pill-tag hover:bg-cyan-100/50 transition-all">
+                    <!-- نقطة منورة قوية -->
+                    <span class="w-2.5 h-2.5 rounded-full neon-glow-dot inline-block"></span> Available for opportunities
                 </a>
             </div>
         </div>
@@ -64,71 +120,76 @@
         <!-- HERO SECTION -->
         <section id="home" class="pt-6 pb-4 flex flex-col lg:flex-row items-center justify-between gap-12">
             <div class="lg:w-6/12 space-y-6">
-                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-50 border border-cyan-100 text-cyan-700 text-xs font-semibold">
-                    <span class="w-2 h-2 rounded-full bg-cyan-500 animate-pulse"></span> Junior Data Analyst
+                <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full pill-tag text-cyan-800 text-xs font-semibold shadow-sm">
+                    <!-- نقطة منورة قوية -->
+                    <span class="w-2.5 h-2.5 rounded-full neon-glow-dot inline-block"></span> Junior Data Analyst
                 </div>
                 <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.15] text-slate-900">
                     Turning Data Into <br/><span class="accent-gradient-text">Actionable Insights</span>
                 </h1>
-                <p class="text-slate-600 text-base sm:text-lg leading-relaxed max-w-xl font-normal">
-                    A chemist by background with a deep passion for Data Analytics. I combine my scientific roots and analytical rigor with a solid technical foundation in SQL, Power BI (Power Query/DAX), Advanced Excel, and Python to transform raw operational datasets into clear insights and dynamic dashboards.
+                <p class="text-slate-700 text-base sm:text-lg leading-relaxed max-w-xl font-normal">
+                    A chemist by background with a deep passion for Data Analytics. I combine scientific rigor with SQL, Power BI (Power Query/DAX), Advanced Excel, and Python, turning raw operational datasets into clear insights and dynamic dashboards.
                 </p>
                 <div class="flex flex-wrap items-center gap-4 pt-2">
-                    <a href="#projects" class="px-6 py-3.5 rounded-2xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-sm transition-all shadow-md">Explore Projects</a>
-                    <a href="Mahmoud Ashor.pdf" target="_blank" class="px-6 py-3.5 rounded-2xl bg-cyan-50 hover:bg-cyan-100 text-cyan-700 font-semibold text-sm transition-all flex items-center gap-2 border border-cyan-200">
+                    <a href="#projects" class="px-6 py-3.5 rounded-2xl bg-slate-900/85 hover:bg-slate-900 text-white font-semibold text-sm transition-all shadow-lg backdrop-blur-md">Explore Projects</a>
+                    <a href="Mahmoud Ashor.pdf" target="_blank" class="px-6 py-3.5 rounded-2xl bg-white/30 hover:bg-white/50 text-cyan-800 font-semibold text-sm transition-all flex items-center gap-2 border border-white/60 shadow-sm backdrop-blur-md">
                         <i class="fa-solid fa-file-pdf text-xs"></i> View CV
                     </a>
                 </div>
             </div>
 
-            <!-- الكارت المتحرك -->
+            <!-- الكارت الزجاجي الفائق الشفافية -->
             <div class="lg:w-6/12 w-full">
-                <div class="soft-card p-6 sm:p-8 space-y-6 bg-gradient-to-br from-white via-sky-50/30 to-cyan-50/50 border border-cyan-100 shadow-card relative animate-pulse-slow">
-                    <div class="flex items-center justify-between border-b border-cyan-100/60 pb-4">
+                <div class="glass-panel p-6 sm:p-8 space-y-6 relative overflow-hidden">
+                    <div class="flex items-center justify-between border-b border-white/40 pb-4">
                         <div>
-                            <div class="flex items-center gap-2">
-                                <span class="w-2.5 h-2.5 rounded-full bg-cyan-500 animate-ping"></span>
-                                <h3 class="font-bold text-slate-800 text-base">Live Analytics Engine</h3>
+                            <div class="flex items-center gap-2.5">
+                                <!-- نقطة منورة قوية -->
+                                <span class="w-3 h-3 rounded-full neon-glow-dot inline-block"></span>
+                                <h3 class="font-bold text-slate-900 text-base">Live Analytics Engine</h3>
                             </div>
-                            <p class="text-xs text-sky-600/80 font-medium">Real-time KPI & Pipeline Processing</p>
+                            <p class="text-xs text-sky-700 font-medium">Real-time KPI & Pipeline Processing</p>
                         </div>
                         <div class="flex space-x-1.5">
-                            <span class="w-3 h-3 rounded-full bg-sky-200 inline-block"></span>
-                            <span class="w-3 h-3 rounded-full bg-cyan-300 inline-block"></span>
-                            <span class="w-3 h-3 rounded-full bg-cyan-500 inline-block"></span>
+                            <span class="w-3 h-3 rounded-full bg-sky-300/60 inline-block"></span>
+                            <span class="w-3 h-3 rounded-full bg-cyan-400/60 inline-block"></span>
+                            <span class="w-3 h-3 rounded-full bg-cyan-600/60 inline-block"></span>
                         </div>
                     </div>
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div class="p-4 rounded-2xl bg-white/80 border border-cyan-100 shadow-sm hover:border-cyan-300 transition-all group">
+                        <div class="p-4 rounded-2xl bg-white/25 border border-white/50 shadow-sm hover:border-cyan-300 transition-all group backdrop-blur-md">
                             <div class="flex justify-between items-center mb-1">
-                                <span class="text-xs text-slate-500 font-medium">Model Accuracy</span>
-                                <i class="fa-solid fa-chart-line text-cyan-500 text-xs"></i>
+                                <span class="text-xs text-slate-600 font-medium">Case Studies</span>
+                                <i class="fa-solid fa-chart-line text-cyan-600 text-xs"></i>
                             </div>
-                            <div class="text-2xl font-extrabold text-slate-900 group-hover:text-cyan-600 transition-colors">98.4%</div>
-                            <div class="w-full bg-slate-100 h-1.5 rounded-full mt-2 overflow-hidden">
-                                <div class="bg-gradient-to-r from-sky-400 to-cyan-500 h-full rounded-full" style="width: 98.4%"></div>
+                            <div class="text-2xl font-extrabold text-slate-900 group-hover:text-cyan-700 transition-colors">4</div>
+                            <div class="w-full bg-white/40 h-1.5 rounded-full mt-2 overflow-hidden">
+                                <div class="bg-gradient-to-r from-sky-400 to-cyan-500 h-full rounded-full" style="width: 100%"></div>
                             </div>
                         </div>
 
-                        <div class="p-4 rounded-2xl bg-white/80 border border-cyan-100 shadow-sm hover:border-cyan-300 transition-all group">
+                        <div class="p-4 rounded-2xl bg-white/25 border border-white/50 shadow-sm hover:border-cyan-300 transition-all group backdrop-blur-md">
                             <div class="flex justify-between items-center mb-1">
-                                <span class="text-xs text-slate-500 font-medium">Processed Rows</span>
-                                <i class="fa-solid fa-database text-sky-500 text-xs"></i>
+                                <span class="text-xs text-slate-600 font-medium">Processed Rows</span>
+                                <i class="fa-solid fa-database text-sky-600 text-xs"></i>
                             </div>
-                            <div class="text-2xl font-extrabold text-slate-900 group-hover:text-sky-600 transition-colors">50K+</div>
-                            <div class="w-full bg-slate-100 h-1.5 rounded-full mt-2 overflow-hidden">
+                            <div class="text-2xl font-extrabold text-slate-900 group-hover:text-sky-700 transition-colors">50K+</div>
+                            <div class="w-full bg-white/40 h-1.5 rounded-full mt-2 overflow-hidden">
                                 <div class="bg-gradient-to-r from-cyan-400 to-sky-500 h-full rounded-full" style="width: 85%"></div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="p-3.5 rounded-xl bg-cyan-900 text-cyan-50 flex items-center justify-between text-xs shadow-inner">
-                        <div class="flex items-center gap-2">
+                    <div class="p-3.5 rounded-xl bg-slate-900/80 backdrop-blur-md text-cyan-50 flex items-center justify-between text-xs shadow-inner border border-slate-700/50">
+                        <div class="flex items-center gap-2.5">
                             <i class="fa-solid fa-terminal text-cyan-400"></i>
                             <span class="font-mono">SQL & Power BI Dashboard Status:</span>
                         </div>
-                        <span class="px-2 py-0.5 rounded bg-cyan-700/80 text-cyan-200 font-bold uppercase tracking-wider text-[10px] animate-pulse">Active Sync</span>
+                        <!-- نقطة منورة قوية -->
+                        <span class="px-2.5 py-0.5 rounded-full bg-cyan-500/30 text-cyan-200 font-bold uppercase tracking-wider text-[10px] flex items-center gap-1.5 border border-cyan-400/50">
+                            <span class="w-2 h-2 rounded-full neon-glow-dot inline-block"></span> Active Sync
+                        </span>
                     </div>
                 </div>
             </div>
@@ -139,16 +200,16 @@
             <div class="text-center max-w-2xl mx-auto space-y-2">
                 <h2 class="text-3xl font-extrabold text-slate-900">About Me</h2>
             </div>
-            <div class="flex flex-col lg:flex-row items-center gap-12">
+            <div class="glass-panel p-8 sm:p-12 flex flex-col lg:flex-row items-center gap-12">
                 <div class="lg:w-5/12 w-full flex justify-center">
                     <div class="relative max-w-md w-full">
-                        <div class="soft-card p-3 rounded-3xl bg-gradient-to-tr from-sky-100 to-cyan-50 overflow-hidden shadow-xl border border-cyan-100">
+                        <div class="p-3 rounded-3xl bg-white/25 backdrop-blur-lg border border-white/60 shadow-lg overflow-hidden">
                             <img src="images/Profile Picture.jpeg" alt="Mahmoud Ashor Beshary" class="rounded-2xl object-cover w-full h-96 shadow-sm" onerror="this.src='https://placehold.co/600x600/e0f2fe/0ea5e9?text=Mahmoud+Ashor'"/>
                         </div>
                     </div>
                 </div>
                 <div class="lg:w-7/12 space-y-6">
-                    <p class="text-slate-600 leading-relaxed text-base font-normal">
+                    <p class="text-slate-800 leading-relaxed text-base font-normal">
                         I am <strong>Mahmoud Ashor Beshary</strong>, a Bachelor’s graduate in Chemistry & Zoology from South Valley University (Very Good with Honours - 81.7%). Beyond my academic background, my true passion lies in <strong>Data Analytics</strong>. Building upon my professional experience as an In-Process Control (IPC) Specialist at top pharmaceutical companies like CIRA Pharma and UNI Pharma, I combine a rigorous, quality-first analytical mindset with strong technical proficiencies in SQL, Power BI, Advanced Excel, and Python to turn complex operational datasets into clear, impactful, and data-driven decisions.
                     </p>
                 </div>
@@ -160,12 +221,12 @@
             <div class="text-center max-w-2xl mx-auto space-y-2">
                 <h2 class="text-3xl font-extrabold text-slate-900">Technical Toolkit</h2>
             </div>
-            <div class="soft-card p-6 sm:p-10 bg-white">
+            <div class="glass-panel p-6 sm:p-10">
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-                    <div class="p-3 bg-cyan-50/50 border border-cyan-100 rounded-xl font-bold text-cyan-900 text-xs">Power BI & DAX</div>
-                    <div class="p-3 bg-cyan-50/50 border border-cyan-100 rounded-xl font-bold text-cyan-900 text-xs">SQL Server (T-SQL)</div>
-                    <div class="p-3 bg-cyan-50/50 border border-cyan-100 rounded-xl font-bold text-cyan-900 text-xs">Advanced Excel & Power Query</div>
-                    <div class="p-3 bg-cyan-50/50 border border-cyan-100 rounded-xl font-bold text-cyan-900 text-xs">Python (Jupyter)</div>
+                    <div class="p-3.5 bg-white/30 border border-white/60 rounded-2xl font-bold text-cyan-950 text-xs backdrop-blur-md shadow-sm">Power BI & DAX</div>
+                    <div class="p-3.5 bg-white/30 border border-white/60 rounded-2xl font-bold text-cyan-950 text-xs backdrop-blur-md shadow-sm">SQL Server (T-SQL)</div>
+                    <div class="p-3.5 bg-white/30 border border-white/60 rounded-2xl font-bold text-cyan-950 text-xs backdrop-blur-md shadow-sm">Advanced Excel & Power Query</div>
+                    <div class="p-3.5 bg-white/30 border border-white/60 rounded-2xl font-bold text-cyan-950 text-xs backdrop-blur-md shadow-sm">Python (Jupyter)</div>
                 </div>
             </div>
         </section>
@@ -175,14 +236,14 @@
             <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
                 <div>
                     <h2 class="text-3xl font-extrabold text-slate-900">Featured Projects</h2>
-                    <p class="text-slate-500 text-sm mt-1">A selection of dashboards, data models, and SQL analyses I've built.</p>
+                    <p class="text-slate-600 text-sm mt-1">A selection of dashboards, data models, and SQL analyses I've built.</p>
                 </div>
 
                 <div class="flex flex-wrap gap-2 text-xs font-semibold" id="filter-buttons">
-                    <button onclick="filterProjects('all')" class="project-filter-btn active px-4 py-2 rounded-xl bg-slate-900 text-white transition-all">All</button>
-                    <button onclick="filterProjects('Power BI')" class="project-filter-btn px-4 py-2 rounded-xl bg-white border border-slate-200 hover:bg-slate-50 text-slate-600 transition-all">Power BI</button>
-                    <button onclick="filterProjects('SQL')" class="project-filter-btn px-4 py-2 rounded-xl bg-white border border-slate-200 hover:bg-slate-50 text-slate-600 transition-all">SQL Server</button>
-                    <button onclick="filterProjects('Excel')" class="project-filter-btn px-4 py-2 rounded-xl bg-white border border-slate-200 hover:bg-slate-50 text-slate-600 transition-all">Excel</button>
+                    <button onclick="filterProjects('all')" class="project-filter-btn active px-4 py-2 rounded-xl bg-slate-900 text-white transition-all shadow-md">All</button>
+                    <button onclick="filterProjects('Power BI')" class="project-filter-btn px-4 py-2 rounded-xl bg-white/30 backdrop-blur-md border border-white/60 hover:bg-white/50 text-slate-700 transition-all">Power BI</button>
+                    <button onclick="filterProjects('SQL')" class="project-filter-btn px-4 py-2 rounded-xl bg-white/30 backdrop-blur-md border border-white/60 hover:bg-white/50 text-slate-700 transition-all">SQL Server</button>
+                    <button onclick="filterProjects('Excel')" class="project-filter-btn px-4 py-2 rounded-xl bg-white/30 backdrop-blur-md border border-white/60 hover:bg-white/50 text-slate-700 transition-all">Excel</button>
                 </div>
             </div>
 
@@ -190,25 +251,25 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="projects-grid">
 
                 <!-- Project 1: Walmart -->
-                <div class="project-card soft-card overflow-hidden flex flex-col justify-between bg-white hover:shadow-hover transition-all cursor-pointer" onclick="openModal('project1')" data-tech="Power BI DAX">
+                <div class="project-card glass-card overflow-hidden flex flex-col justify-between cursor-pointer" onclick="openModal('project1')" data-tech="Power BI DAX">
                     <div>
-                        <div class="h-60 bg-slate-900 overflow-hidden relative border-b border-slate-100 flex items-center justify-center">
+                        <div class="h-60 bg-slate-900/10 overflow-hidden relative border-b border-white/40 flex items-center justify-center">
                             <img src="images/Screenshot for main dashboard of walmart sales.png" alt="Walmart Sales Dashboard" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" onerror="this.src='https://placehold.co/800x450/1e293b/0ea5e9?text=Walmart+Sales+Dashboard'">
-                            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-cyan-950/80 text-cyan-200 backdrop-blur-md">POWER BI & DAX</span>
+                            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-slate-950/70 text-cyan-200 backdrop-blur-md">POWER BI & DAX</span>
                         </div>
                         <div class="p-6 space-y-3">
-                            <span class="px-3 py-1 rounded-full text-[10px] font-semibold bg-cyan-50 text-cyan-700">Power BI</span>
+                            <span class="px-3 py-1 rounded-full text-[10px] font-semibold bg-white/40 text-cyan-800 border border-white/60 backdrop-blur-sm">Power BI</span>
                             <h3 class="font-bold text-xl text-slate-900">Walmart Sales Analysis (2010–2012)</h3>
-                            <p class="text-xs text-slate-500 leading-relaxed">Comprehensive retail analytics tracking multi-year sales performance ($6.74bn), holiday impacts, store-level trends, and macroeconomic correlations.</p>
+                            <p class="text-xs text-slate-700 leading-relaxed">Comprehensive retail analytics tracking multi-year sales performance ($6.74bn), holiday impacts, store-level trends, and macroeconomic correlations.</p>
                             <div class="flex flex-wrap gap-2 pt-2">
-                                <span class="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600 text-[11px] font-medium">Power BI</span>
-                                <span class="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600 text-[11px] font-medium">Power Query</span>
-                                <span class="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600 text-[11px] font-medium">DAX</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-white/30 backdrop-blur-sm text-slate-700 text-[11px] font-medium border border-white/60">Power BI</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-white/30 backdrop-blur-sm text-slate-700 text-[11px] font-medium border border-white/60">Power Query</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-white/30 backdrop-blur-sm text-slate-700 text-[11px] font-medium border border-white/60">DAX</span>
                             </div>
                         </div>
                     </div>
                     <div class="p-6 pt-0">
-                        <div class="w-full py-3 rounded-xl bg-slate-50 hover:bg-cyan-50 text-slate-700 hover:text-cyan-700 text-xs font-semibold border border-slate-200 transition-colors flex items-center justify-center gap-2">
+                        <div class="w-full py-3 rounded-xl bg-white/30 hover:bg-white/50 text-slate-800 hover:text-cyan-700 text-xs font-semibold border border-white/60 transition-colors flex items-center justify-center gap-2 backdrop-blur-sm">
                             <span>Inspect Case Study</span>
                             <i class="fa-solid fa-arrow-right text-[10px]"></i>
                         </div>
@@ -216,25 +277,25 @@
                 </div>
 
                 <!-- Project 2: Apex Supermarket -->
-                <div class="project-card soft-card overflow-hidden flex flex-col justify-between bg-white hover:shadow-hover transition-all cursor-pointer" onclick="openModal('project2')" data-tech="Power BI Excel">
+                <div class="project-card glass-card overflow-hidden flex flex-col justify-between cursor-pointer" onclick="openModal('project2')" data-tech="Power BI Excel">
                     <div>
-                        <div class="h-60 bg-slate-900 overflow-hidden relative border-b border-slate-100 flex items-center justify-center">
-                            <img src="images/Screenshot For Apex Supermarket Dashboard.png" alt="Apex Supermarket Dashboard" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" onerror="this.src='https://placehold.co/800x450/1e293b/0ea5e9?text=Apex+Supermarket+Dashboard'">
-                            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-cyan-950/80 text-cyan-200 backdrop-blur-md">POWER BI & RETAIL</span>
+                        <div class="h-60 bg-slate-900/10 overflow-hidden relative border-b border-white/40 flex items-center justify-center">
+                            <img src="images/Screenshot Apex Main Dashboard.png" alt="Apex Supermarket Dashboard" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" onerror="this.src='https://placehold.co/800x450/1e293b/0ea5e9?text=Apex+Supermarket+Dashboard'">
+                            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-slate-950/70 text-cyan-200 backdrop-blur-md">POWER BI & RETAIL</span>
                         </div>
                         <div class="p-6 space-y-3">
-                            <span class="px-3 py-1 rounded-full text-[10px] font-semibold bg-cyan-50 text-cyan-700">Power BI</span>
+                            <span class="px-3 py-1 rounded-full text-[10px] font-semibold bg-white/40 text-cyan-800 border border-white/60 backdrop-blur-sm">Power BI</span>
                             <h3 class="font-bold text-xl text-slate-900">Apex Supermarket Project (Q1)</h3>
-                            <p class="text-xs text-slate-500 leading-relaxed">Interactive Power BI dashboard analyzing Q1 performance ($322.91K Revenue), COGS, gross margins, and sales representative contributions.</p>
+                            <p class="text-xs text-slate-700 leading-relaxed">Interactive Power BI dashboard analyzing Q1 performance ($322.97K Revenue), COGS, gross margins, and sales representative contributions.</p>
                             <div class="flex flex-wrap gap-2 pt-2">
-                                <span class="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600 text-[11px] font-medium">Power BI</span>
-                                <span class="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600 text-[11px] font-medium">DAX</span>
-                                <span class="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600 text-[11px] font-medium">Financials</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-white/30 backdrop-blur-sm text-slate-700 text-[11px] font-medium border border-white/60">Power BI</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-white/30 backdrop-blur-sm text-slate-700 text-[11px] font-medium border border-white/60">DAX</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-white/30 backdrop-blur-sm text-slate-700 text-[11px] font-medium border border-white/60">DAX</span>
                             </div>
                         </div>
                     </div>
                     <div class="p-6 pt-0">
-                        <div class="w-full py-3 rounded-xl bg-slate-50 hover:bg-cyan-50 text-slate-700 hover:text-cyan-700 text-xs font-semibold border border-slate-200 transition-colors flex items-center justify-center gap-2">
+                        <div class="w-full py-3 rounded-xl bg-white/30 hover:bg-white/50 text-slate-800 hover:text-cyan-700 text-xs font-semibold border border-white/60 transition-colors flex items-center justify-center gap-2 backdrop-blur-sm">
                             <span>Inspect Case Study</span>
                             <i class="fa-solid fa-arrow-right text-[10px]"></i>
                         </div>
@@ -242,25 +303,25 @@
                 </div>
 
                 <!-- Project 3: Smartphones Market -->
-                <div class="project-card soft-card overflow-hidden flex flex-col justify-between bg-white hover:shadow-hover transition-all cursor-pointer" onclick="openModal('project3')" data-tech="SQL Excel">
+                <div class="project-card glass-card overflow-hidden flex flex-col justify-between cursor-pointer" onclick="openModal('project3')" data-tech="SQL Excel">
                     <div>
-                        <div class="h-60 bg-slate-900 overflow-hidden relative border-b border-slate-100 flex items-center justify-center">
+                        <div class="h-60 bg-slate-900/10 overflow-hidden relative border-b border-white/40 flex items-center justify-center">
                             <img src="images/Screenshot For First Dashboard.png" alt="Smartphones Market Dashboard" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" onerror="this.src='https://placehold.co/800x450/1e293b/0ea5e9?text=Smartphones+Market+Analysis'">
-                            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-cyan-950/80 text-cyan-200 backdrop-blur-md">SQL SERVER & EXCEL</span>
+                            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-slate-950/70 text-cyan-200 backdrop-blur-md">SQL SERVER & EXCEL</span>
                         </div>
                         <div class="p-6 space-y-3">
-                            <span class="px-3 py-1 rounded-full text-[10px] font-semibold bg-cyan-50 text-cyan-700">SQL Server</span>
+                            <span class="px-3 py-1 rounded-full text-[10px] font-semibold bg-white/40 text-cyan-800 border border-white/60 backdrop-blur-sm">SQL Server</span>
                             <h3 class="font-bold text-xl text-slate-900">Smartphones Market Analysis (2023)</h3>
-                            <p class="text-xs text-slate-500 leading-relaxed">Market analytics examining global smartphone trends across 938 models, pricing distributions, 5G penetration, and hardware specs.</p>
+                            <p class="text-xs text-slate-700 leading-relaxed">Market analytics examining global smartphone trends across 938 models, pricing distributions, 5G penetration, and hardware specs.</p>
                             <div class="flex flex-wrap gap-2 pt-2">
-                                <span class="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600 text-[11px] font-medium">SQL Server</span>
-                                <span class="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600 text-[11px] font-medium">Excel</span>
-                                <span class="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600 text-[11px] font-medium">EDA</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-white/30 backdrop-blur-sm text-slate-700 text-[11px] font-medium border border-white/60">SQL Server</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-white/30 backdrop-blur-sm text-slate-700 text-[11px] font-medium border border-white/60">Excel</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-white/30 backdrop-blur-sm text-slate-700 text-[11px] font-medium border border-white/60">T-SQL</span>
                             </div>
                         </div>
                     </div>
                     <div class="p-6 pt-0">
-                        <div class="w-full py-3 rounded-xl bg-slate-50 hover:bg-cyan-50 text-slate-700 hover:text-cyan-700 text-xs font-semibold border border-slate-200 transition-colors flex items-center justify-center gap-2">
+                        <div class="w-full py-3 rounded-xl bg-white/30 hover:bg-white/50 text-slate-800 hover:text-cyan-700 text-xs font-semibold border border-white/60 transition-colors flex items-center justify-center gap-2 backdrop-blur-sm">
                             <span>Inspect Case Study</span>
                             <i class="fa-solid fa-arrow-right text-[10px]"></i>
                         </div>
@@ -268,25 +329,24 @@
                 </div>
 
                 <!-- Project 4: Pizza Sales Store -->
-                <div class="project-card soft-card overflow-hidden flex flex-col justify-between bg-white hover:shadow-hover transition-all cursor-pointer" onclick="openModal('project4')" data-tech="SQL Power BI">
+                <div class="project-card glass-card overflow-hidden flex flex-col justify-between cursor-pointer" onclick="openModal('project4')" data-tech="SQL Power BI">
                     <div>
-                        <div class="h-60 bg-slate-900 overflow-hidden relative border-b border-slate-100 flex items-center justify-center">
+                        <div class="h-60 bg-slate-900/10 overflow-hidden relative border-b border-white/40 flex items-center justify-center">
                             <img src="images/Screenshot For Main Dashboard.png" alt="Pizza Sales Dashboard" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" onerror="this.src='https://placehold.co/800x450/1e293b/0ea5e9?text=Pizza+Sales+Store+Analysis'">
-                            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-cyan-950/80 text-cyan-200 backdrop-blur-md">T-SQL & POWER BI</span>
+                            <span class="absolute top-3 left-3 px-2.5 py-1 rounded-md text-[10px] font-bold uppercase tracking-wider bg-slate-950/70 text-cyan-200 backdrop-blur-md">T-SQL & POWER BI</span>
                         </div>
                         <div class="p-6 space-y-3">
-                            <span class="px-3 py-1 rounded-full text-[10px] font-semibold bg-cyan-50 text-cyan-700">Power BI & SQL</span>
-                            <h3 class="font-bold text-xl text-slate-900">Pizza Sales Store Analysis (2015)</h3>
-                            <p class="text-xs text-slate-500 leading-relaxed">End-to-end operational analytics evaluating 49,574 pizza sales transactions ($817,860 Revenue) to isolate peak hours, daily demand, and best/worst sellers.</p>
+                                                        <h3 class="font-bold text-xl text-slate-900">Pizza Sales Store Analysis (2015)</h3>
+                            <p class="text-xs text-slate-700 leading-relaxed">End-to-end operational analytics evaluating 21,350 orders and 49,574 pizzas sold ($817,860 Revenue) to isolate peak hours, daily demand, and best/worst sellers.</p>
                             <div class="flex flex-wrap gap-2 pt-2">
-                                <span class="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600 text-[11px] font-medium">T-SQL</span>
-                                <span class="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600 text-[11px] font-medium">Power BI</span>
-                                <span class="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-600 text-[11px] font-medium">KPIs</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-white/30 backdrop-blur-sm text-slate-700 text-[11px] font-medium border border-white/60">T-SQL</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-white/30 backdrop-blur-sm text-slate-700 text-[11px] font-medium border border-white/60">Power BI</span>
+                                <span class="px-2.5 py-1 rounded-lg bg-white/30 backdrop-blur-sm text-slate-700 text-[11px] font-medium border border-white/60">KPIs</span>
                             </div>
                         </div>
                     </div>
                     <div class="p-6 pt-0">
-                        <div class="w-full py-3 rounded-xl bg-slate-50 hover:bg-cyan-50 text-slate-700 hover:text-cyan-700 text-xs font-semibold border border-slate-200 transition-colors flex items-center justify-center gap-2">
+                        <div class="w-full py-3 rounded-xl bg-white/30 hover:bg-white/50 text-slate-800 hover:text-cyan-700 text-xs font-semibold border border-white/60 transition-colors flex items-center justify-center gap-2 backdrop-blur-sm">
                             <span>Inspect Case Study</span>
                             <i class="fa-solid fa-arrow-right text-[10px]"></i>
                         </div>
@@ -302,19 +362,19 @@
                 <h2 class="text-3xl font-extrabold text-slate-900">Work Experience</h2>
             </div>
             <div class="max-w-3xl mx-auto space-y-4">
-                <div class="soft-card p-6 bg-white flex justify-between items-center">
+                <div class="glass-card p-6 flex justify-between items-center">
                     <div>
-                        <h3 class="font-bold text-slate-800">In-Process Control (IPC) Specialist</h3>
-                        <p class="text-xs text-cyan-600 font-semibold">CIRA PHARMA Company</p>
+                        <h3 class="font-bold text-slate-900">In-Process Control (IPC) Specialist</h3>
+                        <p class="text-xs text-cyan-700 font-semibold">CIRA PHARMA Company</p>
                     </div>
-                    <span class="text-xs text-slate-400 font-bold">Jan 2025 – Present</span>
+                    <span class="text-xs text-slate-600 font-bold">Jan 2025 – Present</span>
                 </div>
-                <div class="soft-card p-6 bg-white flex justify-between items-center">
+                <div class="glass-card p-6 flex justify-between items-center">
                     <div>
-                        <h3 class="font-bold text-slate-800">In-Process Control (IPC) Specialist</h3>
-                        <p class="text-xs text-cyan-600 font-semibold">UNI PHARMA Company</p>
+                        <h3 class="font-bold text-slate-900">In-Process Control (IPC) Specialist</h3>
+                        <p class="text-xs text-cyan-700 font-semibold">UNI PHARMA Company</p>
                     </div>
-                    <span class="text-xs text-slate-400 font-bold">Jul 2024 – Dec 2024</span>
+                    <span class="text-xs text-slate-600 font-bold">Jul 2024 – Dec 2024</span>
                 </div>
             </div>
         </section>
@@ -323,81 +383,76 @@
         <section id="education" class="space-y-10">
             <div class="text-center max-w-2xl mx-auto space-y-2">
                 <h2 class="text-3xl font-extrabold text-slate-900">Education & Training</h2>
-                <p class="text-slate-500 text-sm">Academic background and professional certifications.</p>
+                <p class="text-slate-600 text-sm">Academic background and professional certifications.</p>
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
                 
                 <!-- Academic Degree Column -->
                 <div class="space-y-4">
-                    <div class="flex items-center gap-2 text-cyan-700 font-bold text-sm tracking-wide uppercase">
+                    <div class="flex items-center gap-2 text-cyan-800 font-bold text-sm tracking-wide uppercase">
                         <i class="fa-solid fa-graduation-cap text-base"></i> Academic Degree
                     </div>
-                    <div class="soft-card p-6 bg-white relative overflow-hidden border-l-4 border-l-cyan-500 space-y-3">
+                    <div class="glass-card p-6 relative overflow-hidden border-l-4 border-l-cyan-500 space-y-3">
                         <div class="flex justify-between items-start">
                             <div>
                                 <h3 class="font-bold text-slate-900 text-base">Bachelor’s Degree in Chemistry & Zoology</h3>
-                                <p class="text-xs text-cyan-700 font-semibold mt-1">Faculty of Science, South Valley University</p>
+                                <p class="text-xs text-cyan-800 font-semibold mt-1">Faculty of Science, South Valley University</p>
                             </div>
-                            <span class="text-xs font-bold text-slate-400 bg-slate-100 px-2.5 py-1 rounded-full">June 2022</span>
+                            <span class="text-xs font-bold text-slate-600 bg-white/40 px-2.5 py-1 rounded-full border border-white/60">June 2022</span>
                         </div>
-                        <p class="text-xs text-slate-600 font-medium">Grade: <span class="text-slate-900 font-bold">Very Good with Honours (81.7%)</span></p>
-                        <div class="pt-2 border-t border-slate-100 text-xs text-slate-500 italic">
-                            Graduation Project: Acid chloride reactions preparation — <span class="font-bold text-slate-700">Grade: Excellent</span> (Covered synthesis, physical & chemical properties, reactions, and industrial uses).
+                        <p class="text-xs text-slate-800 font-medium">Grade: <span class="text-slate-900 font-bold">Very Good with Honours (81.7%)</span></p>
+                        <div class="pt-2 border-t border-white/40 text-xs text-slate-700 italic">
+                            Graduation Project: Acid chloride reactions preparation — <span class="font-bold text-slate-900">Grade: Excellent</span> (Covered synthesis, physical & chemical properties, reactions, and industrial uses).
                         </div>
                     </div>
                 </div>
 
                 <!-- Professional Development / Bootcamps & Certifications Column -->
                 <div class="space-y-4">
-                    <div class="flex items-center gap-2 text-cyan-700 font-bold text-sm tracking-wide uppercase">
+                    <div class="flex items-center gap-2 text-cyan-800 font-bold text-sm tracking-wide uppercase">
                         <i class="fa-solid fa-certificate text-base"></i> Bootcamps & Certifications
                     </div>
                     
                     <div class="space-y-3">
-                        <!-- Item 1 -->
-                        <div class="soft-card p-5 bg-white flex justify-between items-center hover:border-cyan-200 transition-all">
+                        <div class="glass-card p-5 flex justify-between items-center">
                             <div>
                                 <h3 class="font-bold text-slate-900 text-sm">Data Analyst Bootcamp</h3>
-                                <p class="text-xs text-slate-500 mt-0.5">Alex The Analyst (SQL, Excel, Power BI, Tableau & Python)</p>
+                                <p class="text-xs text-slate-600 mt-0.5">Alex The Analyst (SQL, Excel, Power BI, Tableau & Python)</p>
                             </div>
-                            <span class="text-[11px] font-semibold text-cyan-700 bg-cyan-50 px-3 py-1 rounded-full border border-cyan-100 shrink-0">Completed</span>
+                            <span class="text-[11px] font-semibold text-cyan-800 bg-white/40 px-3 py-1 rounded-full border border-white/60 shrink-0 backdrop-blur-sm">Completed</span>
                         </div>
 
-                        <!-- Item 2 -->
-                        <div class="soft-card p-5 bg-white flex justify-between items-center hover:border-cyan-200 transition-all">
+                        <div class="glass-card p-5 flex justify-between items-center">
                             <div>
                                 <h3 class="font-bold text-slate-900 text-sm">Google Data Analytics Certificate</h3>
-                                <p class="text-xs text-slate-500 mt-0.5">Foundations: Data, Data, Everywhere</p>
+                                <p class="text-xs text-slate-600 mt-0.5">Foundations: Data, Data, Everywhere</p>
                             </div>
-                            <span class="text-[11px] font-semibold text-cyan-700 bg-cyan-50 px-3 py-1 rounded-full border border-cyan-100 shrink-0">Certified</span>
+                            <span class="text-[11px] font-semibold text-cyan-800 bg-white/40 px-3 py-1 rounded-full border border-white/60 shrink-0 backdrop-blur-sm">Certified</span>
                         </div>
 
-                        <!-- Item 3 -->
-                        <div class="soft-card p-5 bg-white flex justify-between items-center hover:border-cyan-200 transition-all">
+                        <div class="glass-card p-5 flex justify-between items-center">
                             <div>
                                 <h3 class="font-bold text-slate-900 text-sm">Google Data Analytics Certificate</h3>
-                                <p class="text-xs text-slate-500 mt-0.5">Ask Questions to Make Data-Driven Decisions</p>
+                                <p class="text-xs text-slate-600 mt-0.5">Ask Questions to Make Data-Driven Decisions</p>
                             </div>
-                            <span class="text-[11px] font-semibold text-cyan-700 bg-cyan-50 px-3 py-1 rounded-full border border-cyan-100 shrink-0">Certified</span>
+                            <span class="text-[11px] font-semibold text-cyan-800 bg-white/40 px-3 py-1 rounded-full border border-white/60 shrink-0 backdrop-blur-sm">Certified</span>
                         </div>
 
-                        <!-- Item 4 -->
-                        <div class="soft-card p-5 bg-white flex justify-between items-center hover:border-cyan-200 transition-all">
+                        <div class="glass-card p-5 flex justify-between items-center">
                             <div>
                                 <h3 class="font-bold text-slate-900 text-sm">Google Data Analytics Certificate</h3>
-                                <p class="text-xs text-slate-500 mt-0.5">Prepare Data for Exploration</p>
+                                <p class="text-xs text-slate-600 mt-0.5">Prepare Data for Exploration</p>
                             </div>
-                            <span class="text-[11px] font-semibold text-cyan-700 bg-cyan-50 px-3 py-1 rounded-full border border-cyan-100 shrink-0">Certified</span>
+                            <span class="text-[11px] font-semibold text-cyan-800 bg-white/40 px-3 py-1 rounded-full border border-white/60 shrink-0 backdrop-blur-sm">Certified</span>
                         </div>
 
-                        <!-- Item 5 -->
-                        <div class="soft-card p-5 bg-white flex justify-between items-center hover:border-cyan-200 transition-all">
+                        <div class="glass-card p-5 flex justify-between items-center">
                             <div>
                                 <h3 class="font-bold text-slate-900 text-sm">AI Fundamentals & Advanced Computer Skills</h3>
-                                <p class="text-xs text-slate-500 mt-0.5">Certified Professional Training</p>
+                                <p class="text-xs text-slate-600 mt-0.5">Certified Professional Training</p>
                             </div>
-                            <span class="text-[11px] font-semibold text-cyan-700 bg-cyan-50 px-3 py-1 rounded-full border border-cyan-100 shrink-0">Certified</span>
+                            <span class="text-[11px] font-semibold text-cyan-800 bg-white/40 px-3 py-1 rounded-full border border-white/60 shrink-0 backdrop-blur-sm">Certified</span>
                         </div>
                     </div>
                 </div>
@@ -407,17 +462,15 @@
 
         <!-- CONTACT SECTION -->
         <section id="contact" class="space-y-6">
-            <div class="soft-card p-10 bg-gradient-to-tr from-cyan-50/50 via-white to-sky-50/40 text-center space-y-4 border border-cyan-100">
+            <div class="glass-panel p-10 text-center space-y-4">
                 <h2 class="text-3xl font-extrabold text-slate-900">Let's Work Together</h2>
-                <p class="text-slate-600 text-sm">Open to Junior Data Analyst roles and Business Intelligence opportunities.</p>
+                <p class="text-slate-700 text-sm">Open to Junior Data Analyst roles and Business Intelligence opportunities.</p>
                 <div class="flex flex-wrap justify-center items-center gap-6 text-xl pt-2">
-                    <!-- GitHub Link -->
-                    <a href="https://github.com/Mahmoud-Ashor" target="_blank" class="flex items-center gap-2 text-slate-700 hover:text-cyan-600 transition-colors font-semibold text-sm px-4 py-2.5 rounded-xl bg-white border border-slate-200 shadow-sm">
+                    <a href="https://github.com/Mahmoud-Ashor" target="_blank" class="flex items-center gap-2 text-slate-800 hover:text-cyan-700 transition-colors font-semibold text-sm px-4 py-2.5 rounded-xl bg-white/40 border border-white/60 shadow-sm backdrop-blur-md">
                         <i class="fa-brands fa-github text-lg text-slate-900"></i> GitHub Profile
                     </a>
-                    <!-- Email Direct Mailto Link -->
-                    <a href="mailto:Mahmoudashor1000@gmail.com" class="flex items-center gap-2 text-slate-700 hover:text-cyan-600 transition-colors font-semibold text-sm px-4 py-2.5 rounded-xl bg-white border border-slate-200 shadow-sm">
-                        <i class="fa-regular fa-envelope text-lg text-cyan-600"></i> Send Email
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=Mahmoudashor1000@gmail.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-slate-800 hover:text-cyan-700 transition-colors font-semibold text-sm px-4 py-2.5 rounded-xl bg-white/40 border border-white/60 shadow-sm backdrop-blur-md">
+    <i class="fa-regular fa-envelope text-lg text-cyan-700"></i> Send Email
                     </a>
                 </div>
             </div>
@@ -426,58 +479,72 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="border-t border-slate-200 py-6 bg-white text-center text-xs text-slate-500">
+    <footer class="border-t border-white/40 py-6 bg-white/20 backdrop-blur-md text-center text-xs text-slate-600">
         © 2026 Mahmoud Ashor Beshary. All rights reserved.
     </footer>
 
     <!-- INTERACTIVE CASE STUDY MODAL WITH MULTI-IMAGE GALLERY -->
-    <div id="projectModal" class="fixed inset-0 z-50 hidden bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="soft-card bg-white max-w-4xl w-full p-6 sm:p-8 space-y-6 relative overflow-y-auto max-h-[95vh]">
-            <button onclick="closeModal()" class="absolute top-5 right-5 text-slate-400 hover:text-slate-700 text-xl"><i class="fa-solid fa-xmark"></i></button>
+    <div id="projectModal" class="fixed inset-0 z-50 hidden bg-slate-900/35 backdrop-blur-lg flex items-center justify-center p-4">
+        <div class="glass-panel bg-white/40 backdrop-blur-3xl max-w-4xl w-full p-6 sm:p-8 space-y-6 relative overflow-y-auto max-h-[95vh] shadow-2xl border border-white/80">
+            <button onclick="closeModal()" class="absolute top-5 right-5 text-slate-500 hover:text-slate-900 text-xl"><i class="fa-solid fa-xmark"></i></button>
             
             <div class="space-y-2">
                 <span id="modal-tag" class="px-2.5 py-1 rounded-md text-[10px] font-bold tracking-wider uppercase pill-tag">Project Case Study</span>
                 <h3 id="modal-title" class="text-2xl font-extrabold text-slate-900"></h3>
             </div>
 
-            <div class="space-y-4 text-xs text-slate-600">
+            <div class="space-y-4 text-xs text-slate-700">
                 <div>
-                    <h4 class="text-xs uppercase font-bold text-slate-400 tracking-wider mb-1">Business Objective & Overview</h4>
-                    <p id="modal-objective" class="text-slate-600 leading-relaxed text-sm"></p>
+                    <h4 class="text-xs uppercase font-bold text-slate-500 tracking-wider mb-1">Business Objective & Overview</h4>
+                    <p id="modal-objective" class="text-slate-800 leading-relaxed text-sm"></p>
                 </div>
 
                 <div>
-                    <h4 class="text-xs uppercase font-bold text-slate-400 tracking-wider mb-1">Technologies Used</h4>
+                    <h4 class="text-xs uppercase font-bold text-slate-500 tracking-wider mb-1">Problem &amp; Solution</h4>
+                    <div class="space-y-1.5">
+                        <p class="text-slate-800 leading-relaxed text-sm flex items-start gap-2">
+                            <i class="fa-solid fa-circle-question text-cyan-600 mt-1 text-xs"></i>
+                            <span><strong>Problem:</strong> <span id="modal-problem"></span></span>
+                        </p>
+                        <p class="text-slate-800 leading-relaxed text-sm flex items-start gap-2">
+                            <i class="fa-solid fa-lightbulb text-cyan-600 mt-1 text-xs"></i>
+                            <span><strong>Solution:</strong> <span id="modal-solution"></span></span>
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-xs uppercase font-bold text-slate-500 tracking-wider mb-1">Technologies Used</h4>
                     <div id="modal-stack" class="flex flex-wrap gap-2 pt-1"></div>
                 </div>
 
                 <!-- Interactive Screenshot Gallery Viewer with Next/Prev Buttons -->
                 <div>
                     <div class="flex items-center justify-between mb-2">
-                        <h4 class="text-xs uppercase font-bold text-slate-400 tracking-wider">Project Screenshots Gallery</h4>
-                        <span id="gallery-counter" class="text-xs font-semibold text-cyan-600">Image 1 of 2</span>
+                        <h4 class="text-xs uppercase font-bold text-slate-500 tracking-wider">Project Screenshots Gallery</h4>
+                        <span id="gallery-counter" class="text-xs font-semibold text-cyan-700">Image 1 of 2</span>
                     </div>
-                    <div class="relative bg-slate-900 rounded-2xl overflow-hidden shadow-lg border border-slate-200 h-72 sm:h-96 flex items-center justify-center">
+                    <div class="relative bg-slate-900 rounded-2xl overflow-hidden shadow-lg border border-white/20 h-72 sm:h-96 flex items-center justify-center">
                         <img id="modal-img" src="" alt="Dashboard Preview" class="w-full h-full object-contain bg-slate-950 transition-all duration-300">
                         
                         <!-- Prev / Next Navigation Buttons -->
-                        <button onclick="prevImage()" class="absolute left-3 w-10 h-10 rounded-full bg-white/80 hover:bg-white text-slate-800 flex items-center justify-center shadow-md transition-all">
+                        <button onclick="prevImage()" class="absolute left-3 w-10 h-10 rounded-full bg-white/70 hover:bg-white text-slate-900 flex items-center justify-center shadow-md transition-all backdrop-blur-md">
                             <i class="fa-solid fa-chevron-left text-xs"></i>
                         </button>
-                        <button onclick="nextImage()" class="absolute right-3 w-10 h-10 rounded-full bg-white/80 hover:bg-white text-slate-800 flex items-center justify-center shadow-md transition-all">
+                        <button onclick="nextImage()" class="absolute right-3 w-10 h-10 rounded-full bg-white/70 hover:bg-white text-slate-900 flex items-center justify-center shadow-md transition-all backdrop-blur-md">
                             <i class="fa-solid fa-chevron-right text-xs"></i>
                         </button>
                     </div>
                 </div>
 
                 <div>
-                    <h4 class="text-xs uppercase font-bold text-slate-400 tracking-wider mb-1">Key Deliverables & Insights</h4>
-                    <ul id="modal-bullets" class="list-disc list-inside space-y-1.5 text-slate-600 text-sm"></ul>
+                    <h4 class="text-xs uppercase font-bold text-slate-500 tracking-wider mb-1">Key Deliverables & Insights</h4>
+                    <ul id="modal-bullets" class="list-disc list-inside space-y-1.5 text-slate-800 text-sm"></ul>
                 </div>
             </div>
 
-            <div class="pt-4 border-t border-slate-100 flex justify-end">
-                <button onclick="closeModal()" class="px-5 py-2.5 bg-slate-900 hover:bg-slate-800 text-white rounded-xl text-xs font-semibold">Close</button>
+            <div class="pt-4 border-t border-white/40 flex justify-end">
+                <button onclick="closeModal()" class="px-5 py-2.5 bg-slate-900 hover:bg-slate-800 text-white rounded-xl text-xs font-semibold shadow-md">Close</button>
             </div>
         </div>
     </div>
@@ -489,6 +556,8 @@
                 tag: 'POWER BI & DAX',
                 title: 'Walmart Sales Analysis (2010–2012)',
                 objective: 'Comprehensive retail analytics dashboard tracking Walmart multi-year sales performance ($6.74bn), holiday vs workday impact, store-level trends, and deep sales investigations.',
+                problem: 'Weekly sales across 45 stores showed a lower 2012 total, raising questions about data coverage and holiday sales.',
+                solution: 'Built a Power BI model with DAX measures to compare holiday and non-holiday sales, and investigated the yearly difference through monthly trends and store performance.',
                 stack: ['Power BI', 'Power Query', 'DAX', 'Data Modeling'],
                 images: [
                     'images/Screenshot for main dashboard of walmart sales.png',
@@ -497,29 +566,34 @@
                 ],
                 bullets: [
                     'Dashboard 1 (Core Sales Overview): Tracks multi-year retail performance across 45 stores, comparing holiday ($505.30M) vs workday ($6.23bn) periods and highlighting yearly peaks using dynamic DAX measures.',
-                    'Dashboard 2 (Sales Investigation): Investigated sales and low-performance periods,analyzing the underlying reasons behind sales drops in 2012.',
+                    'Dashboard 2 (Sales Investigation): Deep-dives into operational variances, examining store-level anomalies, external macroeconomic correlations (temperature & fuel prices), and sales fluctuations.',
                     'Dashboard 3 (Key Insights & Summary): Synthesizes advanced analytical findings and executive summaries to drive data-backed strategic decisions.'
                 ]
             },
             project2: {
                 tag: 'POWER BI & RETAIL',
                 title: 'Apex Supermarket Project (Q1)',
-                objective: 'Interactive Power BI dashboard analyzing Q1 performance ($322.91K Revenue), COGS, gross margins, and sales representative contributions for Apex Retail Group.',
+                objective: 'Interactive Power BI dashboard analyzing Q1 performance ($322.97K Revenue), COGS, gross margins, and sales representative contributions for Apex Retail Group.',
+                problem: 'Q1 sales showed a February revenue dip and a wide gap between sales representatives.',
+                solution: 'Built a Power BI investigation dashboard to compare revenue, days with recorded sales and daily invoice rates, alongside sales-representative performance.',
                 stack: ['Power BI', 'DAX', 'Power Query', 'Financial Analysis'],
                 images: [
-                    'images/Screenshot For Apex Supermarket Dashboard.png',
-                    'images/Screenshot For Key Insights For Apex Market.png'
+                    'images/Screenshot Apex Main Dashboard.png',
+                    'images/Screenshot for Apex Investigation Dashboard.png',
+                    'images/Screenshot Apex Key Insights.png'
                 ],
                 bullets: [
-                    'Analyzed first-quarter financial metrics ($322.91K Total Revenue vs $307.53K COGS, generating $15.38K Gross Income).',
-                    'Isolated sales performance per rep (Samy leading with ~$128K, Sally & Ahmed at ~$93K each).',
-                    'Constructed executive dashboard views tracking product line contributions and gross margin distributions.'
+                    'Dashboard 1 (Core Sales Overview): Shows the whole Q1 snapshot at a glance—sales, profit, months, products, reps, and shoppers.',
+                    'Dashboard 2 (Sales Investigation): Digs into why February dipped and why one sales rep\'s numbers stayed low, based on active days and invoice counts.',
+                    'Dashboard 3 (Key Insights & Summary): Pulls together the key findings and practical moves to fix the gaps.'
                 ]
             },
             project3: {
                 tag: 'SQL SERVER & EXCEL',
                 title: 'Smartphones Market Analysis (2023)',
                 objective: 'Market analytics dashboard examining global smartphone trends across 938 models, pricing distributions, 5G penetration, and hardware specs using SQL Server and Excel.',
+                problem: 'Comparing pricing and hardware features across 938 smartphone listings required a clear, structured analysis.',
+                solution: 'Wrote 10 T-SQL KPI queries and built an interactive Excel dashboard to explore prices, brands and hardware features.',
                 stack: ['SQL Server (T-SQL)', 'Advanced Excel', 'Data Cleansing'],
                 images: [
                     'images/Screenshot For First Dashboard.png',
@@ -527,14 +601,16 @@
                 ],
                 bullets: [
                     'Built T-SQL queries analyzing 938 smartphone models across 23 global brands ($380.31 overall average price).',
-                    'Applied Excel formulas to strip brand volume bias and measure 5G market penetration (56.50% share).',
+                    'Measured 5G support among listed models (56.50%) and hardware adoption with T-SQL KPI queries, explored in an interactive Excel dashboard.',
                     'Summarized key hardware specs across battery capacity, RAM distributions, and refresh rates.'
                 ]
             },
             project4: {
                 tag: 'T-SQL & POWER BI',
                 title: 'Pizza Sales Store Analysis (2015)',
-                objective: 'End-to-end operational analytics evaluating 49,574 pizza sales transactions ($817,860 Revenue) to isolate peak hours, daily demand, and best/worst sellers.',
+                objective: 'End-to-end operational analytics evaluating 21,350 orders and 49,574 pizzas sold ($817,860 Revenue) to isolate peak hours, daily demand, and best/worst sellers.',
+                problem: 'Monthly order totals showed an apparent Q4 decline that needed further investigation.',
+                solution: 'Used SQL Server queries and a Power BI dashboard to compare monthly totals with average orders per recorded sales day and investigate the difference.',
                 stack: ['T-SQL', 'SQL Server', 'Power BI', 'DAX', 'Excel'],
                 images: [
                     'images/Screenshot For Main Dashboard.png',
@@ -559,6 +635,8 @@
             document.getElementById('modal-tag').innerText = data.tag;
             document.getElementById('modal-title').innerText = data.title;
             document.getElementById('modal-objective').innerText = data.objective;
+            document.getElementById('modal-problem').innerText = data.problem;
+            document.getElementById('modal-solution').innerText = data.solution;
 
             currentProjectImages = data.images;
             currentImageIndex = 0;
@@ -568,7 +646,7 @@
             stackBox.innerHTML = '';
             data.stack.forEach(t => {
                 const s = document.createElement('span');
-                s.className = 'px-2.5 py-1 rounded-md bg-cyan-50 text-cyan-800 text-[11px] font-semibold border border-cyan-100';
+                s.className = 'px-2.5 py-1 rounded-md bg-white/45 text-cyan-950 text-[11px] font-semibold border border-white/60 backdrop-blur-sm';
                 s.innerText = t;
                 stackBox.appendChild(s);
             });
@@ -612,17 +690,17 @@
         function filterProjects(cat) {
             const buttons = document.querySelectorAll('.project-filter-btn');
             buttons.forEach(b => {
-                b.classList.remove('bg-slate-900', 'text-white');
-                b.classList.add('bg-white', 'text-slate-600');
+                b.classList.remove('bg-slate-900', 'text-white', 'shadow-md');
+                b.classList.add('bg-white/30', 'backdrop-blur-md', 'border', 'border-white/60', 'text-slate-700');
             });
 
-            event.target.classList.remove('bg-white', 'text-slate-600');
-            event.target.classList.add('bg-slate-900', 'text-white');
+            event.target.classList.remove('bg-white/30', 'backdrop-blur-md', 'border', 'border-white/60', 'text-slate-700');
+            event.target.classList.add('bg-slate-900', 'text-white', 'shadow-md');
 
             const cards = document.querySelectorAll('.project-card');
             cards.forEach(c => {
                 const tech = c.getAttribute('data-tech');
-                if (cat === 'all' || tech.includes(cat)) {
+                if (cat === 'all' || tech.includes(tech)) {
                     c.style.display = 'flex';
                 } else {
                     c.style.display = 'none';
